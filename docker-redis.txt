@@ -1,0 +1,21 @@
+docker run \
+-d \
+--name supply_redis \
+-p 6367:6379 \
+--restart always \
+-v /home/chenchao/supply-db/redis/data:/data \
+-v /home/chenchao/supply-db/redis/dump.rdb:/data/dump.rdb \
+-v /home/chenchao/supply-db/redis/appendonly.aof:/data/appendonly.aof \
+-v /home/chenchao/supply-db/redis/redis.conf:/etc/redis/redis.conf \
+redis:latest redis-server /etc/redis/redis.conf
+
+
+
+docker run \
+-d \
+--name supply_redis \
+-p 6366:6379 \
+--restart always \
+-v /home/chenchao/supply-db/redis/data:/data \
+-v /home/chenchao/supply-db/redis/redis.conf:/etc/redis/redis.conf \
+redis:latest redis-server /etc/redis/redis.conf
