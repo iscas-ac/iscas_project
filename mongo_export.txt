@@ -1,0 +1,7 @@
+mongoexport -d supply -c software_industry_energy -f id, name, version, description, language, country, source, publishedTime, virtual, vendor, alias, isOpenSource, isLatestVersion, isBinary, updateTime, insertTime, size, homepage, licenseCategory, pagerank  --type==csv -o ../energy.csv
+
+
+mongoexport --host localhost --port 27017 --db supply --collection software_industry_energy --csv --out energy.csv --fields id, name, version, description, language, country, source, publishedTime, virtual, vendor, alias, isOpenSource, isLatestVersion, isBinary, updateTime, insertTime, size, homepage, licenseCategory, pagerank
+
+
+mongoexport --host=127.0.0.1 --port=27017 -u admin -p admin --authenticationDatabase=admin -d supply -c software_industry_finance_1 --type=csv  --fields=id,name,version,description,language,country,source,publishedTime,virtual,vendor,alias,isOpenSource,isLatestVersion,isBinary,updateTime,insertTime,size,homepage,licenseCategory,pagerank -o finance_1.csv
